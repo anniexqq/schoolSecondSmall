@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='section section-good'>
+      <view class='good' wx:for='{{goodsList}}' wx:for-item="good" wx:key="good.goodsName">
+        <image class='cover' src='{{good.imageUrl}}'></image>
+        <view class='content'>
+          <view class='text name'>{{good.goodsName}}</view>
+          <view class='text purchasedDate'>购买时间：{{good.payTime}}</view>
+          <view class='text'>
+            <text class='price'>¥{{good.price}}</text>
+          *
+            <text>{{good.goodsNumber}}</text>
+          </view>
+        </view>
+        <view class='stepper'>
+         合计：¥<view class='sum'>{{good.sumPrice}}</view>
+        </view>
+      </view>
+  </view>
+</view>

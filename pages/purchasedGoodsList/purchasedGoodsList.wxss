@@ -1,0 +1,93 @@
+page {
+  height: 100%;
+  background: #fff;
+  font-family: -apple-system-font, Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 1.42857;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.section-good {
+  margin-bottom: 100rpx;
+}
+
+.good {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 250rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.good:last-child {
+  border-bottom: none;
+}
+
+.cover {
+  margin-left: 20rpx;
+  width: 180rpx;
+  height: 180rpx; 
+}
+
+.content {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.content .text {
+  color: #363636;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content .name {
+  color: #333;
+  font-size: 36rpx;
+}
+
+.content .purchasedDate {
+  color: #363636;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.content .price{
+  margin-top: 20px;
+  font-size: 36rpx;
+  color: #e4452a;
+}
+
+.stepper .sum{
+  font-size: 36rpx;
+  color: #e4452a;
+}  
+
+.good .stepper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+  flex-direction: row;
+  text-align: center;
+  font-size: 36rpx;
+  color: #363636;
+}

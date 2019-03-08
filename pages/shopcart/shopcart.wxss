@@ -1,0 +1,236 @@
+/* pages/shopcart/shopcart.wxss */
+
+page {
+  height: 100%;
+  background: #fff;
+  font-family: -apple-system-font, Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 32rpx;
+  line-height: 1.42857;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+ .J-shopping-cart-empty{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.shopping-cart-empty {
+   height: 250px;
+    padding-top: 3.2rem;
+    padding-bottom: 1.6rem;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.shopping-cart-empty .empty-text {
+    width: 5.83333rem;
+    height: 7.46rem;
+    font-size: 0.9rem;
+    color: #222;
+    margin-top: .53333rem;
+    line-height: .74667rem;
+    font-weight: 400;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.section-good {
+  margin-bottom: 100rpx;
+}
+
+.good {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 250rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.good:last-child {
+  border-bottom: none;
+}
+
+.checkbox {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.cover {
+  margin-left: 20rpx;
+  width: 180rpx;
+  height: 180rpx; 
+}
+
+.content {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.content .text {
+  color: #363636;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content .name {
+  color: #333;
+  font-size: 36rpx;
+}
+
+.content .author {
+  font-size: 28rpx;
+  color: #363636;
+  margin-top: 10rpx;
+}
+
+.content .desc {
+  color: #363636;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.content .press {
+  font-size: 28rpx;
+  color: #363636;
+  margin-top: 10rpx;
+}
+
+.content .price {
+  font-size: 36rpx;
+  color: #e4452a;
+  margin-top: 10rpx;
+}
+
+.good .stepper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+  flex-direction: row;
+  text-align: center;
+}
+
+.stepper .add, .stepper .subtract {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.stepper .disabled {
+  color: #eee;
+}
+
+.stepper .count {
+  width: 60rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 1rem;
+  font-size: 28rpx;
+}
+
+.section-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.section-bottom .btn {
+  width: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fdfffd;
+  background-color: #fbb304;
+}
+
+.section-bottom .btn-default {
+  color: #363636;
+  background-color: #eee;
+}
+
+.section-bottom .btn-primary {
+  color: #fdfffd;
+  background-color: #fbb304;
+}
+
+.section-bottom .checkbox-allcheck {
+  display: inline-block;
+  margin-left: 30rpx;
+  vertical-align: top;
+  font-size: 0px;
+}
+
+.section-bottom .check-all-text {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10rpx;
+  height: 23px;
+  line-height: 23px;
+  font-size: 28rpx;
+}
+
+.section-bottom .total {
+  flex: 1;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.total .totalCount {
+  font-size: 26rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.total .totalPrice {
+  display: inline-block;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+
+.total .totalCount text {
+  color: #e4452a;
+  vertical-align: middle;
+}
+
+.total .totalPrice text {
+  color: #e4452a;
+  font-size: 36rpx;
+  vertical-align: middle;
+}

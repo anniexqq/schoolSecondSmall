@@ -1,0 +1,22 @@
+@import '../../../utils/weui.wxss';
+
+view{
+    font-size: 36rpx;
+    font-family: '微软雅黑';
+}
+
+.weui-cells:before{
+  top:0;
+  border-top:1rpx solid white;
+  }
+.weui-cell{
+  line-height: 3.5rem;
+}
+.weui-cells:after{
+  bottom:0;border-bottom:1rpx solid white
+}
+
+.weui-btn{
+  width: 80%;
+  background-color: #fa4f85 !important;
+}

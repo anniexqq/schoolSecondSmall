@@ -1,0 +1,37 @@
+<scroll-view scroll-y="true">
+  <!-- banner -->
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{banners}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" mode="widthFix" data-goodsid="{{item.id}}" catchtap="show"/>
+        </swiper-item>
+      </block>
+    </swiper>  
+    <!-- 搜索部分开始 -->
+    <view class="search">
+        <image src="/images/search.png"></image>
+        <input name="" value='{{goodSearchName}}' placeholder="商品名称" bindinput="toSearch"></input>
+        <!-- <view class="searchBth">搜索</view> -->
+    </view>
+    <!-- 搜索部分结束 -->
+    <!-- 特价列表开始 -->
+    <view class="specialPrice">
+        <view class="title">最新发布</view>
+        <block wx:for="{{goodsList}}">
+            <view class="goodsList">
+                <image class="goodsPic" src='{{item.imageUrl}}' bindtap='goToDetail'></image>
+                <view class="goodsInfo">
+                    <view class="goodsTitle ellipsis2">{{item.goodsName}}</view>
+                    <view class="price">
+                        <text class="fl newPrice">￥{{item.newPrice}}</text>
+                        <text class="fl oldPrice">￥{{item.oldPrice}}</text>
+                        <view class="car1" data-goodsid='{{item.id}}' bindtap='putInShopcar'>
+                          <label class="ico-moon icon-shoppingcart my_icon" data-goodsid='{{item.id}}'></label>  
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <!-- 特价列表结束 -->
+</scroll-view>

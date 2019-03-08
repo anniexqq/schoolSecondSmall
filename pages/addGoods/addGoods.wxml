@@ -1,0 +1,56 @@
+<form bindsubmit="saveGoods">
+  <view class="weui-cells weui-cells_after-title page">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">商品名称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodsName" placeholder="请输入商品名" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">描述</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="goodsDesc" placeholder="请输入5-50个字" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">单价</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="newPrice" placeholder="请输入数字" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">原价</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="oldPrice" placeholder="请输入数字" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系方式</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" name="mobile" placeholder="请输入手机号码" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">添加图片</view>
+      </view>
+    </view>
+    <view class='image' wx:for="{{img_url}}">
+      <image class="moment_img" src="{{item}}"></image>
+    </view>
+    <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+      <image bindtap="chooseimage" class="moment_img" src='/images/addGoods.png'></image>
+    </view>
+    <button class="my_button" type="primary" form-type="submit">发布</button>
+  </view>
+</form>

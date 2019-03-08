@@ -1,0 +1,13 @@
+<!--pages/favoriteList/favoriteList.wxml-->
+<view class='container'>
+  <view class='section'>
+      <view class='good' wx:for='{{goodList}}' wx:for-item="good" wx:key="good.name">
+        <image class='cover' src='{{good.cover}}'></image>
+        <view class='content'>
+          <view class='text name'>{{good.name}}</view>
+          <view class='text author'>{{good.author}}</view>
+          <view class='text price'>¥{{good.price}}</view>
+        </view>
+      </view>
+  </view>
+</view>

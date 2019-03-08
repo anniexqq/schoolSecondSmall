@@ -1,0 +1,53 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/shopcart/shopcart",
+        "pages/userCenter/userCenter",
+        "pages/address/addressList/addressList",
+        "pages/address/addAddress/addAddress",
+        "pages/addGoods/addGoods",
+        "pages/favoriteList/favoriteList",
+        "pages/purchasedGoodsList/purchasedGoodsList"
+    ],
+    "window": {
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": 50,
+        "navigationBarBackgroundColor": "#f0145a",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "校园二手交易平台",
+        "backgroundColor": "#ffffff"
+    },
+    "debug": true,
+    "tabBar": {
+        "borderStyle": "white",
+        "color": "#b4b4b4",
+        "selectedColor": "#ff5526",
+        "backgroundColor": "#fff",
+        "list": [
+          {
+            "iconPath": "images/5bf408ad73bde.png",
+            "selectedIconPath": "images/5bf408ad73c35.png",
+            "text": "首页",
+            "pagePath": "pages/index/index"
+          },
+          {
+            "iconPath": "images/addShop.png",
+            "selectedIconPath": "images/addShopSelectd.png",
+            "text": "发布",
+            "pagePath": "pages/addGoods/addGoods"
+          },
+          {
+            "iconPath": "images/5bf408adaabb4.png",
+            "selectedIconPath": "images/5bf408adaabfd.png",
+            "text": "购物车",
+            "pagePath": "pages/shopcart/shopcart"
+          },
+          {
+            "iconPath": "images/5bf408ade5752.png",
+            "selectedIconPath": "images/5bf408ade57a8.png",
+            "text": "我的",
+            "pagePath": "pages/userCenter/userCenter"
+          }
+        ]
+    }
+}
