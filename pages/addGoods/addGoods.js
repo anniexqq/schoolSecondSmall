@@ -1,7 +1,7 @@
+var app = getApp();
 Page({
   data: {
-    img_url: [],
-    content: ''
+    img_url: []
   },
   onLoad: function (options) {
   },
@@ -35,18 +35,58 @@ Page({
       }
     })
   },
-  //发布按钮事件
-  saveGoods: function () {
+  //发布
+  saveGoods: function (e) {
     var that = this;
-    let img_url = that.data.img_url;
-    var n = that.data.goodsName;
-    console.log("----" + img_url);
-    console.log("----" + n);
-    //var user_id = wx.getStorageSync('userid')
-    // wx.showLoading({
-    //   title: '上传中',
-    // })
-    //that.img_upload()
+    var goodsName = e.detail.value.goodsName;
+    var goodsDesc = e.detail.value.goodsDesc;
+    var newPrice = e.detail.value.newPrice;
+    var oldPrice = e.detail.value.oldPrice;
+    var mobile = e.detail.value.mobile;
+    //let img_url = that.data.img_url;
+
+    if (!goodsName || !newPrice || !oldPrice) {
+      wx.showToast({
+        title: "不能为空",
+        icon: '',
+        duration: 2000
+      });
+      return;
+    }
+    var addressList = {
+      goodsName: goodsName,
+      goodsDesc: goodsDesc,
+      newPrice: newPrice,
+      oldPrice: oldPrice,
+      authorName:"myUser"
+    }
+    wx.showLoading({
+      title: '上传中',
+    })
+    wx.request({
+      url: app.globalData.siteBaseUrl + "/goods/addGoods",
+      data: JSON.stringify(addressList),
+      method: "POST",
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        var result = res.data.success;
+        var toastText = "发布成功！";
+        if (result != true) {
+          toastText = "发布失败！";
+        }
+        wx.hideLoading()
+        wx.showToast({
+          title: toastText,
+          icon: '',
+          duration: 2000
+        });
+        if (result) {
+          wx.switchTab({url:'../index/index'});
+        }
+      }
+    })
   },
 
   //图片上传

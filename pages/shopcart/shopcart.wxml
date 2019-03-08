@@ -18,7 +18,7 @@
         <image class='cover' src='{{good.imageUrl}}'></image>
         <view class='content'>
           <view class='text name'>{{good.goodsName}}</view>
-          <view class='text desc'>{{good.desc}}</view>
+          <view class='text desc'>{{good.goodsDesc}}</view>
           <view class='text price'>¥{{good.price}}</view>
         </view>
         <view class='stepper'>
