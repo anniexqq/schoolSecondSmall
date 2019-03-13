@@ -45,12 +45,17 @@
         <view class="weui-label">添加图片</view>
       </view>
     </view>
-    <view class='image' wx:for="{{img_url}}">
-      <image class="moment_img" src="{{item}}"></image>
+
+    <view class="image_content">
+      <view class='image' wx:for="{{img_url}}">
+        <!-- <image class="deleteImg" mode="aspectFill"  data-index='{{index}}' src="/image/delete.png" bindtap="deleteImg"></image> -->
+        <image class="moment_img" mode="aspectFill" data-index='{{index}}' src="{{item}}" bindtap="previewImg"></image>
     </view>
     <view class='image' style='display:{{hideAdd?"none":"block"}}'>
       <image bindtap="chooseimage" class="moment_img" src='/images/addGoods.png'></image>
     </view>
+ </view>
+
     <button class="my_button" type="primary" form-type="submit">发布</button>
   </view>
 </form>

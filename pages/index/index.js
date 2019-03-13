@@ -6,9 +6,9 @@ Page({
     hidden: true,
     count: '1',
     banners:[
-      { "id": 1, "bannerName": "全新上市", "imgUrl": "/images/14823895573.png", "clickUrl": "", "seq": 1 }, 
-      { "id": 2, "bannerName": "全球优选团", "imgUrl": "/images/CgvUBFrNzZaAMSW8AAFEr6p5z9M050_75_52_o.jpg", "clickUrl": "", "seq": 2 }, 
-      { "id": 3, "bannerName": "新会员满减", "imgUrl": "/images/5acdd4c3N8e1f4ba1.jpg", "clickUrl": null, "seq": 3 }
+      { "id": 1, "bannerName": "全新上市", "imgUrl": "/images/banner01.jpg", "clickUrl": "", "seq": 1 },
+      { "id": 2, "bannerName": "全球优选团", "imgUrl": "/images/banner02.jpg", "clickUrl": "", "seq": 2 }, 
+      { "id": 3, "bannerName": "新会员满减", "imgUrl": "/images/banner03.jpg", "clickUrl": null, "seq": 3 }
     ],                                 
     indicatorDots: true,
     autoplay: true,

@@ -23,14 +23,18 @@ view{
   width: 80%;
   background-color: #fa4f85 !important;
 }
-
+.image_content{
+  width:100%;
+  height:100%;
+}
 .image{
+  float: left;
   margin-left: 14px;
   margin-bottom: 12px;
   width:100px;
   height: 100px;
   border: 2px rgb(223, 220, 220) dashed;
-  text-align: center;
+  text-align: left;
 }
 .moment_img{
   width: 98px;

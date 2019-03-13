@@ -2,7 +2,7 @@
 App({
   globalData: {
     userInfo: null,
-    siteBaseUrl: 'http://localhost:8888/schoolSecond',
+    siteBaseUrl: 'http://172.25.1.164:8888/schoolSecond',
   },
   onLaunch: function () {
     // 展示本地存储能力
