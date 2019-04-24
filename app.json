@@ -7,7 +7,8 @@
         "pages/address/addAddress/addAddress",
         "pages/addGoods/addGoods",
         "pages/favoriteList/favoriteList",
-        "pages/purchasedGoodsList/purchasedGoodsList"
+        "pages/purchasedGoodsList/purchasedGoodsList",
+        "pages/myGoods/myGoods"
     ],
     "window": {
         "enablePullDownRefresh": false,

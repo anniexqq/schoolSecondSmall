@@ -1,7 +1,7 @@
 var app = getApp();
 Page({
   data: {
-    count:2,//设置只能传2张图片
+    count:1,//设置只能传1张图片
     img_url: []
   },
   onLoad: function (options) {
@@ -22,7 +22,7 @@ Page({
           that.setData({
             img_url: img_url
           })
-          //图如果满了2张，不显示加图
+          //图如果满了1张，不显示加图
           if (that.data.img_url.length >= that.data.count ) {
             that.setData({
               hideAdd: 1
@@ -45,6 +45,16 @@ Page({
     var oldPrice = e.detail.value.oldPrice;
     var mobile = e.detail.value.mobile;
 
+    var uInfo = app.globalData.userInfo;
+    if (!uInfo){
+      wx.showToast({
+        title: "请先登录授权",
+        icon: 'fail',
+        duration: 2000
+      });
+      return;
+    }
+
     if (!goodsName || !newPrice || !oldPrice) {
       wx.showToast({
         title: "不能为空",
@@ -58,7 +68,7 @@ Page({
       goodsDesc: goodsDesc,
       newPrice: newPrice,
       oldPrice: oldPrice,
-      authorName:"myUser"
+      authorName: app.globalData.userInfo.nickName
     }
     wx.showLoading({
       title: '商品发布中',
@@ -74,9 +84,10 @@ Page({
         var result = res.data.goodsId;
         //信息新增成功后，再上传图片
         if (result>0) {
+          wx.hideLoading();
           that.uploadGoodsImg(result);
         }else{
-          wx.hideLoading()
+          wx.hideLoading();
           wx.showToast({
             title: "信息发布失败!",
             icon: '',
@@ -104,20 +115,28 @@ Page({
         },
         //接口调用结束的回调函数（调用成功、失败都会执行）
         complete: function (res) {
-          num++;
-          if (num == imgFilePaths.length) {//图片已全部上传
-            wx.hideLoading();
-            wx.showToast({
-              title: '商品发布成功！',
-              icon: 'success'
-            });
-          }
           var data = JSON.parse(res.data);
           if (data.status == 500) {
+            wx.hideLoading();
             wx.showToast({
               title: data.msg,
             });
+          }else{
+            num++;
+            if (num == imgFilePaths.length) {//图片已全部上传
+              wx.hideLoading();
+              wx.showToast({
+                title: '商品发布成功！',
+                icon: '',
+                duration: 2000
+              });
+            }
           }
+          //跳到首页
+          wx.switchTab({
+            url: '../index/index',
+          })
+          //that.onLoad();
         },
         fail: function (res) {
           //可统计上传失败图片数

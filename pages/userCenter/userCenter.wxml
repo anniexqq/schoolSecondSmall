@@ -13,18 +13,18 @@
       <label class="ico-moon icon-danmu-send my_c_icon"></label>
       <text class="my_c_text">已购商品</text>
     </view>
-    <!-- <view class="my_column">
+    <view class="my_column" bindtap="getMyGoods">
       <label class="ico-moon icon-notify my_c_icon"></label>
-      <text class="my_c_text">我发布的</text>
-    </view> -->
-    <view class="my_column" bindtap="goFavorite">
-      <label class="ico-moon icon-heart my_c_icon"></label>
-      <text class="my_c_text">收藏夹</text>
+      <text class="my_c_text">我的发布</text>
     </view>
   </view>
 
   <view  class="line-bg2"></view>
 
+  <view class="my_column" bindtap="goFavorite">
+      <label class="ico-moon icon-heart my_c_icon"></label>
+      <text class="my_c_text">收藏夹</text>
+    </view>
   <view>
     <view class="my_column" bindtap="addressManage">
       <label class="ico-moon icon-fesadress my_c_icon"></label>
@@ -34,6 +34,6 @@
 
   <view class="buttom_b">
     <view class="buttom_view">
-      校园二手交易平台@2019
+      校园二手交易平台v2.0@2019
     </view>
   </view>

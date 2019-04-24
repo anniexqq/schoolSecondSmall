@@ -1,0 +1,25 @@
+<scroll-view scroll-y="true">
+ <view class="specialPrice">
+         <block wx:for="{{authorGoodsList}}">
+            <view class="goodsList">
+                <image class="goodsPic" src='{{item.imageUrl}}' bindtap='goToDetail'></image>
+                <view class="goodsInfo">
+                    <view class="swa">
+                      <view class="goodsTitle">{{item.goodsName}}</view>
+                      <view class="del" data-goodsid='{{item.id}}' bindtap='delMyGoods'>
+                        <label class="ico-moon icon-delete my_icon" data-goodsid='{{item.id}}'></label>  
+                      </view>
+                    </view>
+                    <view class="price">
+                        <text class="newPrice">￥{{item.newPrice}}</text>
+                        <text class="oldPrice">￥{{item.oldPrice}}</text>
+                    </view>
+                    <view class="status">
+                     商品状态：{{item.status}}
+                    </view>
+                    <view class="goodsTime">日期：{{item.createTime}}</view>
+                </view>
+            </view>
+        </block>
+  </view>
+</scroll-view>

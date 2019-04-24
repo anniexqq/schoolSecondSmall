@@ -36,7 +36,7 @@ Page({
   },
   getUserInfo: function (e) {
     console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
@@ -50,5 +50,8 @@ Page({
   },
   getPurchasedGoods:function(){
     wx.navigateTo({ url: '../purchasedGoodsList/purchasedGoodsList' });
+  },
+  getMyGoods:function(){
+    wx.navigateTo({ url: '../myGoods/myGoods' });
   }
 })

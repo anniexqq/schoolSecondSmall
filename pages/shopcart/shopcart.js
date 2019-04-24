@@ -32,11 +32,22 @@ Page({
    */
   onShow: function () {
     var that = this;
+
+    var uInfo = app.globalData.userInfo;
+    if (!uInfo) {
+      wx.showToast({
+        title: "请先登录授权",
+        icon: 'fail',
+        duration: 2000
+      });
+      return;
+    }
+
     wx.request({
       url: app.globalData.siteBaseUrl + '/shopcar/listUserShopcar',
       method: "POST",
       data: {
-        "userName": "myUser",
+        "userName": app.globalData.userInfo.nickName,
         "isPay": "0"
       },
       success: function (res) {
