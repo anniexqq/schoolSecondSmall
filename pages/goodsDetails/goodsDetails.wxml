@@ -1,0 +1,57 @@
+<view class='container'>
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="/images/tu_m.jpg"></image>
+    <text class="userinfo-name">{{userInfo.nickName}}</text>
+  </view>
+
+  <view class="price">
+    <text class="newPrice">￥20</text>
+    <text class="oldPrice">￥280</text>
+  </view>
+
+  <view class="goodsDetails">
+    <view class="title">手提包2019</view>
+    <view class="desc">存储你在小程序需要回复的内容主要包括用户名、用户头像等微信用户信息存储你在小程序需要回复的内容主要包括用户存储你在小程序需要回复的内容主要包括用户。</view>
+    <view class='imagesize'>
+      <image class="goodsPic" src='/images/tu1.jpg'></image>
+    </view>
+  </view>
+</view>
+
+<view class="line-bg"></view>
+
+<view class="message-container">
+  <view class="message_count">
+    <text>留言·{{msgCount}}</text>
+  </view>
+  
+  <block wx:for="{{goodsInfoList}}">
+    <view class="message_info">
+      <view class="head">
+          <image class="userAvatar" src="{{item.userImage}}"></image>
+          <text class="userName">{{item.userName}}</text>
+      </view>
+      <view class="content">
+          请联系手机：15151819078,请尽快联系我，需要回复的内容，需要回复的内容。
+      </view>
+    </view>
+  </block>
+  <!-- <view class="message_info">
+    <view class="head">
+        <image class="userAvatar" src="/images/tu10.jpg"></image>
+        <text class="userName">哈士奇</text>
+        <button class='answerBtn'><text class=''>回 复</text></button>
+    </view>
+    <view class="content">
+        尽快联系我。
+    </view>
+  </view> -->
+</view>
+
+<!-- 添加留言区域 -->
+<form bindsubmit="saveMessage">
+<view class='message_box'>
+  <input name='inputMsg' class='input' type='text' placeholder='问更多细节，请留言~' placeholder-class='place-input'></input>
+  <button formType="submit" class="btn">添加留言</button>
+</view>
+</form>

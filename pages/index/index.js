@@ -112,5 +112,17 @@ Page({
         });
       }
     })
+  },
+  goToDetail:function(e){
+    var uInfo = app.globalData.userInfo;
+    if (!uInfo) {
+      wx.showToast({
+        title: "请先登录授权",
+        icon: 'fail',
+        duration: 2000
+      });
+      return;
+    }
+    wx.navigateTo({ url: '../goodsDetails/goodsDetails' });
   }
 })

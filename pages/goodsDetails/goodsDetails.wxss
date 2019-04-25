@@ -1,0 +1,159 @@
+page{
+  background-color:#fff;
+  margin-left:auto;
+}
+.container{
+  padding: 35rpx 35rpx 20rpx 35rpx;
+  /* border: 1px solid #f03; */
+}
+
+.userinfo {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%; 
+  height: 100rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.userinfo-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 20%;
+}
+.userinfo-name {
+   position: relative;
+   /* flex: 1; */
+   font-size: 31rpx;
+   font-weight: bold;
+   margin-left: 15rpx;
+   margin-top: 30rpx;
+}
+
+.price {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+}
+.price .newPrice {
+    font-size: 36rpx;
+    color: #e4452a;
+    margin-top: 10rpx;
+    margin-right: 10rpx;
+}
+.price .oldPrice {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 28rpx;
+    margin-top: 20rpx;
+    align-items: -webkit-flex-end;
+}
+
+.goodsDetails{
+  padding-bottom: 10rpx;
+  /* border-bottom: 1px solid #f3f3f3; */
+}
+.goodsDetails .title {
+    margin: 20rpx 0;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+.goodsDetails .desc{
+  font-size: 33rpx;
+  margin-bottom: 15rpx;
+}
+
+.goodsDetails .imagesize{
+ display:flex;              
+ justify-content: center;  
+}
+.goodsDetails .imagesize .goodsPic {
+    width: 650rpx;
+    height: 650rpx;
+    border: 1px solid #f3f3f3;
+}
+
+.line-bg{
+  width: 100%;
+  height: 20rpx;
+  background-color: #f3f3f3;
+}
+
+.message-container{
+  background-color:#fff;
+}
+.message_count{
+  padding: 35rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #f3f3f3;
+}
+.message_info{
+  padding: 25rpx 35rpx;
+  border-bottom: 1px solid #f3f3f3;
+}
+.message_info .head {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%; 
+  height: 80rpx;
+   /* border: 1px solid #f03; */
+}
+.message_info .head .userAvatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 15%;
+}
+.message_info .head .userName {
+   position: relative;
+   font-size: 29rpx;
+   font-weight: bold;
+   margin-left: 15rpx;
+   margin-top: 30rpx;
+}
+/* .message_info .head .answerBtn{
+  position: relative;
+  float: right;
+  margin-right: 0;
+  padding: 0;
+
+  width: 100rpx;
+  height: 60rpx;
+  font-size: 28rpx; 
+  line-height:58rpx;
+  text-align:center;
+  vertical-align: middle;
+  color: #fa4f85;
+  font-weight: bold;
+  background-color: #fff;
+  border:1px solid #fa4f85;
+} */
+.message_info .content{
+  font-size: 30rpx;
+  margin-left: 95rpx;
+}
+
+/* 添加留言 */
+.message_box{
+  padding: 35rpx; 
+}
+.input{
+  border: 1px solid #f3f3f3;
+  padding: 5px;
+  border-radius: 5px;
+}
+.place-input{
+  color: #ccc;
+  font-size: 30rpx;
+}
+.btn{
+  margin-top:8rpx;
+  padding: 5px;
+  height: 80rpx;
+  width: 100%;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 30rpx;
+  background-color: #fa4f85;
+}
