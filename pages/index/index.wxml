@@ -19,7 +19,7 @@
         <view class="title">最新发布</view>
         <block wx:for="{{goodsList}}">
             <view class="goodsList">
-                <image class="goodsPic" src='{{item.imageUrl}}' bindtap='goToDetail'></image>
+                <image class="goodsPic" data-gogoodsid='{{item.id}}' src='{{item.imageUrl}}' bindtap='goToDetail'></image>
                 <view class="goodsInfo">
                     <view class="goodsTitle ellipsis2">{{item.goodsName}}</view>
                     <view class="price">

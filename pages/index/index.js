@@ -123,6 +123,8 @@ Page({
       });
       return;
     }
-    wx.navigateTo({ url: '../goodsDetails/goodsDetails' });
+
+    var goodsid = e.target.dataset.gogoodsid;
+    wx.navigateTo({ url: '../goodsDetails/goodsDetails?goodsid=' + goodsid});
   }
 })

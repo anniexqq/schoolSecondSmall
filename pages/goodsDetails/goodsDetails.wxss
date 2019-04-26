@@ -55,7 +55,7 @@ page{
 }
 .goodsDetails .title {
     margin: 20rpx 0;
-    font-size: 36rpx;
+    font-size: 35rpx;
     font-weight: bold;
 }
 .goodsDetails .desc{
@@ -111,6 +111,11 @@ page{
    font-weight: bold;
    margin-left: 15rpx;
    margin-top: 30rpx;
+}
+.message_info .head .replayUserName {
+   font-size: 29rpx;
+   margin-left: 9rpx;
+   margin-top: 32rpx;
 }
 /* .message_info .head .answerBtn{
   position: relative;

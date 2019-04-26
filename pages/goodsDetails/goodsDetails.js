@@ -5,13 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsInfoList: []
+    goodsId:'',
+    msgCount:'',
+    goodsName:'',
+    goodsDesc:'',
+    newPrice:'',
+    oldPrice:'',
+    goodsImageUrl:'',
+    goodsAuthorName:'',
+    messageList:[]
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      goodsId: options.goodsid
+    })
+    console.log("查看商品ID=" + options.goodsid + "的详情");
   },
 
   /**
@@ -23,28 +35,86 @@ Page({
       url: app.globalData.siteBaseUrl + '/goods/getGoodsDetails',
       method: "GET",
       data: {
-        "goodsId": "1",
+        "goodsId": that.data.goodsId
       },
       success: function (res) {
-        var list = res.data.goodsInfoList;
-        if (list == null) {
-          var toastText = "获取信息失败" + res.data.errMsg;
+        if (!res.data){
           wx.showToast({
-            title: toastText,
+            title: "获取详情失败",
             icon: "",
             duration: 2000
           });
+          return;
+        }
+        that.setData({
+            messageList: res.data.messageList,
+            msgCount: res.data.msgCount,
+            goodsId: res.data.goodsId,
+            msgCount: res.data.msgCount,
+            goodsName: res.data.goodsName,
+            goodsDesc: res.data.goodsDesc,
+            newPrice: res.data.newPrice,
+            oldPrice: res.data.oldPrice,
+            goodsImageUrl: res.data.goodsImageUrl,
+            goodsAuthorName: res.data.goodsAuthorName
+          });
+      }
+    })
+  },
+  //添加留言
+  saveMessage:function(e){
+    var that = this;
+    var uInfo = app.globalData.userInfo;
+    if (!uInfo) {
+      wx.showToast({
+        title: "请先登录授权",
+        icon: 'fail',
+        duration: 2000
+      });
+      return;
+    }
+
+    var comment = e.detail.value.inputMsg;//输入的留言内容
+    var goodsId = that.data.goodsId;//商品ID
+    var msgAuthorName = uInfo.nickName;//留言用户昵称
+    var msgAuthorImg = uInfo.avatarUrl;//留言用户头像
+    var replyCommentId = null;//回复某一条留言
+    var replyUserName = null;//回复谁的用户名
+
+    var messageObj = {
+      comment: comment,
+      goodsId: goodsId,
+      userName: msgAuthorName,
+      userImage: msgAuthorImg,
+      replyCommentId: replyCommentId,
+      replyUserName:replyUserName
+    }
+
+    wx.request({
+      url: app.globalData.siteBaseUrl + "/message/addMessage",
+      data: JSON.stringify(messageObj),
+      method: "POST",
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        var result = res.data.messageId;
+        if (result > 0) {
+          wx.showToast({
+            title: "留言成功！",
+            icon: '',
+            duration: 2000
+          });
+          that.onShow();
         } else {
-          that.setData({
-            goodsInfoList: list
+          wx.showToast({
+            title: "留言失败！",
+            icon: '',
+            duration: 2000
           });
         }
       }
     })
-  },
-  saveMessage:function(e){
-    var that = this;
-    var msg = e.detail.value.inputMsg;
-    console.log("添加留言：" + msg);
+
   }
 })
