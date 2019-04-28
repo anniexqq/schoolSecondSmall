@@ -49,9 +49,14 @@ page{
     align-items: -webkit-flex-end;
 }
 
+.goodsCreateTime{
+  color: #888;
+  font-size: 30rpx;
+  margin-top:10rpx;
+}
+
 .goodsDetails{
   padding-bottom: 10rpx;
-  /* border-bottom: 1px solid #f3f3f3; */
 }
 .goodsDetails .title {
     margin: 20rpx 0;

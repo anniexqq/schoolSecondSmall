@@ -9,6 +9,10 @@
     <text class="oldPrice">￥{{oldPrice}}</text>
   </view>
 
+  <view class="goodsCreateTime">
+    {{goodsCreateTime}}
+  </view>
+
   <view class="goodsDetails">
     <view class="title">{{goodsName}}</view>
     <view class="desc">{{goodsDesc}}</view>
@@ -52,7 +56,7 @@
 <!-- 添加留言区域 -->
 <form bindsubmit="saveMessage">
 <view class='message_box'>
-  <input name='inputMsg' class='input' type='text' placeholder='问更多细节，请留言~' placeholder-class='place-input'></input>
-  <button formType="submit" class="btn">添加留言</button>
+  <input name='inputMsg' class='input' type='text' placeholder='问更多细节，请留言~' placeholder-class='place-input' value="{{inputTxt}}"></input>
+  <button formType="submit" class="btn">发送</button>
 </view>
 </form>

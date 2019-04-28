@@ -11,9 +11,11 @@ Page({
     goodsDesc:'',
     newPrice:'',
     oldPrice:'',
+    goodsCreateTime:'',
     goodsImageUrl:'',
     goodsAuthorName:'',
-    messageList:[]
+    messageList:[],
+    inputTxt:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -50,14 +52,16 @@ Page({
             messageList: res.data.messageList,
             msgCount: res.data.msgCount,
             goodsId: res.data.goodsId,
-            msgCount: res.data.msgCount,
             goodsName: res.data.goodsName,
             goodsDesc: res.data.goodsDesc,
             newPrice: res.data.newPrice,
             oldPrice: res.data.oldPrice,
+            goodsCreateTime: res.data.goodsCreateTime,
             goodsImageUrl: res.data.goodsImageUrl,
-            goodsAuthorName: res.data.goodsAuthorName
+            goodsAuthorName: res.data.goodsAuthorName,
+            inputTxt:''
           });
+
       }
     })
   },
