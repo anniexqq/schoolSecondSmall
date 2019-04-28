@@ -1,9 +1,5 @@
 var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     goodsId:'',
     msgCount:'',
@@ -15,7 +11,11 @@ Page({
     goodsImageUrl:'',
     goodsAuthorName:'',
     messageList:[],
-    inputTxt:''
+    inputTxt:'',
+    focus: false,
+    phValue:'问更多细节，请留言~',
+    replyCommentId:'',
+    replyUserName:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -82,8 +82,9 @@ Page({
     var goodsId = that.data.goodsId;//商品ID
     var msgAuthorName = uInfo.nickName;//留言用户昵称
     var msgAuthorImg = uInfo.avatarUrl;//留言用户头像
-    var replyCommentId = null;//回复某一条留言
-    var replyUserName = null;//回复谁的用户名
+
+    var replyCommentId = that.data.replyCommentId;//回复某一条留言，只有回复时有值
+    var replyUserName = that.data.replyUserName;//回复谁的用户名，只有回复时有值
 
     var messageObj = {
       comment: comment,
@@ -120,5 +121,17 @@ Page({
       }
     })
 
+  },
+  //点击留言时，获取输入框焦点
+  toReplay:function(e){
+    var curMsgId = e.currentTarget.dataset.messageid;//准备回复的留言的ID
+    var curMsgUsername = e.currentTarget.dataset.username;//准备回复的留言的用户名
+    console.log("我在回复：" + curMsgId + "-----:" + curMsgUsername + "---:");
+    this.setData({
+      focus: true,
+      phValue: "回复@" + curMsgUsername,
+      replyCommentId: curMsgId,
+      replyUserName: curMsgUsername
+    })
   }
 })

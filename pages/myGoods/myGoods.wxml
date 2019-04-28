@@ -2,7 +2,7 @@
  <view class="specialPrice">
          <block wx:for="{{authorGoodsList}}">
             <view class="goodsList">
-                <image class="goodsPic" src='{{item.imageUrl}}' bindtap='goToDetail'></image>
+                <image class="goodsPic" src='{{item.imageUrl}}' data-gomygoodsid='{{item.id}}' bindtap='goToDetail'></image>
                 <view class="goodsInfo">
                     <view class="swa">
                       <view class="goodsTitle">{{item.goodsName}}</view>

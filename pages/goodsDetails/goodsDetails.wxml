@@ -30,7 +30,7 @@
   </view>
   
   <block wx:for="{{messageList}}">
-    <view class="message_info">
+    <view class="message_info" bindtap="toReplay" data-messageid='{{item.messageId}}' data-username='{{item.userName}}'>
       <view class="head">
           <image class="userAvatar" src="{{item.userImage}}"></image>
           <text class="userName">{{item.userName}}</text>
@@ -56,7 +56,7 @@
 <!-- 添加留言区域 -->
 <form bindsubmit="saveMessage">
 <view class='message_box'>
-  <input name='inputMsg' class='input' type='text' placeholder='问更多细节，请留言~' placeholder-class='place-input' value="{{inputTxt}}"></input>
-  <button formType="submit" class="btn">发送</button>
+  <input name='inputMsg' class='input' type='text' placeholder='{{phValue}}' placeholder-class='place-input' value="{{inputTxt}}" focus="{{focus}}"></input>
+  <button formType="submit" class="btn">发  送</button>
 </view>
 </form>

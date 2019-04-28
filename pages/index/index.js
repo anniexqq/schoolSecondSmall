@@ -86,7 +86,7 @@ Page({
       });
       return;
     }
-    
+
     var goodsid = e.target.dataset.goodsid;
     if (!goodsid){
       return;
@@ -123,7 +123,7 @@ Page({
       });
       return;
     }
-
+    
     var goodsid = e.target.dataset.gogoodsid;
     wx.navigateTo({ url: '../goodsDetails/goodsDetails?goodsid=' + goodsid});
   }
