@@ -132,11 +132,15 @@ Page({
               });
             }
           }
+          //商品发布成功后，删除新增的图片
+          that.setData({
+            img_url:[],
+            hideAdd: 0
+          })
           //跳到首页
           wx.switchTab({
             url: '../index/index',
-          })
-          //that.onLoad();
+          }) 
         },
         fail: function (res) {
           //可统计上传失败图片数
@@ -145,7 +149,7 @@ Page({
       })
     }
   },
-  //预览图片----------预览后关闭在真机调试可以
+  //预览图片
   previewImg: function (e) {
     var me = this;
     var img_url = me.data.img_url;
