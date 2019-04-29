@@ -44,6 +44,7 @@ Page({
     var newPrice = e.detail.value.newPrice;
     var oldPrice = e.detail.value.oldPrice;
     var mobile = e.detail.value.mobile;
+    let imgFilePaths = that.data.img_url;
 
     var uInfo = app.globalData.userInfo;
     if (!uInfo){
@@ -63,6 +64,17 @@ Page({
       });
       return;
     }
+
+    //判断图片是否是空
+    if(imgFilePaths.length <= 0){
+      wx.showToast({
+        title: "图片不能为空",
+        icon: 'fail',
+        duration: 2000
+      });
+      return;
+    }
+
     var addressList = {
       goodsName: goodsName,
       goodsDesc: goodsDesc,
@@ -82,7 +94,7 @@ Page({
       },
       success: function (res) {
         var result = res.data.goodsId;
-        //信息新增成功后，再上传图片
+        //信息新增成功后，再上传图片b
         if (result>0) {
           wx.hideLoading();
           that.uploadGoodsImg(result);

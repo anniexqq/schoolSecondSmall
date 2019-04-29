@@ -8,19 +8,19 @@ Page({
       {
         'name': '碎花雪纺连衣裙海边度假',
         'author': '89人收藏',
-        'cover': '/images/tu2.jpg',
+        'cover': '/images/banner01.jpg',
         'price': 29.9
       },
       {
         'name': '全新世界名著文学书籍30册',
         'author': '9人收藏',
-        'cover': '/images/tu8.jpg',
+        'cover': '/images/banner02.jpg',
         'price': 59.9
       },
       {
         'name': '女包包时尚斜挎小包2019',
         'author': '5人收藏',
-        'cover': '/images/tu1.jpg',
+        'cover': '/images/banner03.jpg',
         'price': 77.8
       }
     ]
